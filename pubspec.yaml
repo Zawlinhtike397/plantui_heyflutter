@@ -64,8 +64,8 @@ flutter:
   assets:
      - image/Snakeplant.png
      - image/Zamioculcas_Zamiifolia.png
-     - image/Plant1.png
      - image/LuckyJadePlant.png
+     - image/Smallplant.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:plantui_heyflutter/CarouselImg3.dart';
 import 'package:plantui_heyflutter/landing_slogan_1.dart';
 import 'package:plantui_heyflutter/landing_slogan_2.dart';
-import 'package:plantui_heyflutter/landingscreen_1.dart';
+import 'package:plantui_heyflutter/CarouselImg1.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'homepage.dart';
-import 'landingscreen_2.dart';
+import 'CarouselImg2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -219,10 +220,9 @@ class _LandingPageState extends State<LandingPage> {
                     child: PageView(
                       controller: _controller,
                       children: const [
-                        LandingScreen1(),
-                        LandingScreen2(),
-                        LandingScreen1(),
-                        LandingScreen2(),
+                        carouselImg1(),
+                        carouselImg2(),
+                        carouselImg3(),
                       ],
                     ),
                   ),
@@ -232,17 +232,16 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                     child: SmoothPageIndicator(
                       controller: _controller,
-                      count: 4,
+                      count: 3,
                       effect: ExpandingDotsEffect(
                         dotHeight: 6.0,
                         dotWidth: 6.0,
-                        spacing: 4.0,
                         activeDotColor: Colors.grey.shade700,
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 25.0,
+                    height: 15.0,
                   ),
                   Center(
                     child: RichText(
@@ -271,19 +270,19 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 0.0),
+                    const EdgeInsets.symmetric(vertical: 20.0, horizontal: 0.0),
                     child: SizedBox(
                       height: 80,
                       width: 80,
                       child: FloatingActionButton(
                         onPressed: () {
                           // Navigate to the next page
-                          if (currentPage < 3) {
+                          if (currentPage < 2) {
                             print(currentPage);
                             _controller.animateToPage(currentPage + 1,
                                 duration: Duration(milliseconds: 500),
                                 curve: Curves.ease);
-                          } else if(currentPage >= 3) {
+                          } else if(currentPage >= 2) {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -293,12 +292,12 @@ class _LandingPageState extends State<LandingPage> {
                           }
                         },
                         backgroundColor: Colors.lightGreen[600],
-                        child: currentPage < 3 ? const Icon(
+                        child: currentPage < 2 ? const Icon(
                           Icons.arrow_forward,
                           size: 40.0,
                         )
                         : const Icon(
-                      Icons.check,
+                      Icons.skip_next_rounded,
                       size: 40.0,
                       )
                     ),

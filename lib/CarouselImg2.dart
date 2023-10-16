@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LandingScreen2  extends StatelessWidget {
-  const LandingScreen2 ({super.key});
+class carouselImg2  extends StatelessWidget {
+  const carouselImg2 ({super.key});
 
   @override
   Widget build(BuildContext context) {
